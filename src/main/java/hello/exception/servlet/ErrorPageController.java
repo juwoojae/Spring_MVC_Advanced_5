@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ErrorPageController {
     //RequestDispatcher 상수로 정의되어 있음
-    public static final String ERROR_EXCEPTION = "jakarta.servlet.error.exception"; //예외
-    public static final String ERROR_EXCEPTION_TYPE = "jakarta.servlet.error.exception_type"; //예외 타입
+    public static final String ERROR_EXCEPTION = "jakarta.servlet.error.exception"; //예외 404 같은 경우는 exception 이 발생한 것은 아니다.
+    public static final String ERROR_EXCEPTION_TYPE = "jakarta.servlet.error.exception_type"; //예외 타입 404 같은 경우는 exception 이 발생한 것은 아니다.
     public static final String ERROR_MESSAGE = "jakarta.servlet.error.message"; //오류 메세지
     public static final String ERROR_REQUEST_URI = "jakarta.servlet.error.request_uri"; //클라이언트 요청URI
     public static final String ERROR_SERVLET_NAME = "jakarta.servlet.error.servlet_name"; //오류가 발생한 서블릿 이름
@@ -41,3 +41,11 @@ public class ErrorPageController {
         log.info("dispatchType={}", request.getDispatcherType());
     }
 }
+/**
+ * DispatcherType
+ * REQUEST : 클라이언트 요청
+ * ERROR : 오류 요청
+ * FORWARD : MVC 에서 다른 서블릿이나 JSP 결과를 포함할때 RequestDispatcher.forward(request, response);
+ * INCLUDE : 서블릿에서 다른 서블릿이나 JSP 의 결과를 포함할때 RequestDispatcher.include(request, response);
+ * ASYNC : 서블릿 비동기 호출
+ */
