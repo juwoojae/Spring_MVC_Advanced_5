@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * 에러페이지 연결
  */
-@Component
+//@Component
 public class WebServerCustomizer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
