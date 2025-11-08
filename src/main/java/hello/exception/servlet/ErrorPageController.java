@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
+/**
+ * 에러 처리 컨트롤러
+ */
 public class ErrorPageController {
     //RequestDispatcher 상수로 정의되어 있음
     public static final String ERROR_EXCEPTION = "jakarta.servlet.error.exception"; //예외객체(instance) 404 같은 경우는 exception 이 발생한 것은 아니다.
